@@ -1,0 +1,46 @@
+name: WarsForTowny
+version: 1.4-SNAPSHOT1
+author: Joselu
+main: com.aurgiyalgo.WarsForTowny.WarsForTowny
+depend: [Towny]
+commands:
+  warsfortowny:
+    description: WarsForTowny main command
+    usage: /<command>
+    aliases: wft
+    permission: wft.use
+permissions:
+  wft.*:
+    description: Operator access
+    default: op
+    children:
+      wft.use: true
+      wft.neutral: true
+      wft.neutral.others: true
+  wft.use:
+    description: Access to WfT help and info
+    default: true
+  wft.neutral:
+    description: Declare neutrality for own nation
+    default: op
+  wft.neutral.others:
+    description: Declare neutrality for own and other nations
+    default: op
+    children:
+      wft.neutral: true
+  wft.reload:
+    description: Reload WfT
+    default: op
+  wft.declare:
+    description: Declare a war
+    default: op
+  wft.astart:
+    description: Force two nations to war
+    default: op
+  wft.end:
+    description: Ends a war
+    default: op
+  wft.aend:
+    description: Force a war to end
+    default: op
+  
